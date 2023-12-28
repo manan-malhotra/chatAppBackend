@@ -33,6 +33,8 @@ const handleConnection = (connection, req) => {
         const user = jwt.verify(token, process.env.SECRET_KEY);
         connection.userId = user.id;
         connection.username = user.username;
+    } else {
+        console.log("NO COOKIUES FOUND");
     }
     console.log("test " + connection.username);
     connection.on("message", async (text) => {
