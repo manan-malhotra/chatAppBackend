@@ -25,6 +25,7 @@ const handleConnection = (connection, req) => {
     };
     const cookie = req?.headers?.cookie;
     if (cookie) {
+        console.log("COOKIES FOUND");
         const tokenStr = cookie
             .split(";")
             .find((str) => str.startsWith("token="));
